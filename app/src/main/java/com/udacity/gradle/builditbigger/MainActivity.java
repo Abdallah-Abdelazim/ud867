@@ -6,10 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.abdallah.jokedisplayer.activities.JokeDisplayActivity;
-import com.abdallah.jokes.JokesProvider;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -44,10 +42,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view) {
-        JokesProvider jokesProvider = new JokesProvider();
-        Intent intent = new Intent(this, JokeDisplayActivity.class);
-        intent.putExtra(JokeDisplayActivity.EXTRA_JOKE, jokesProvider.provide());
-        startActivity(intent);
+        new JokesEndpointAsyncTask(this, new JokesEndpointAsyncTask.TaskListener() {
+            @Override
+            public void onTaskStarting() {}
+
+            @Override
+            public void onTaskFinished(String result) {
+                Intent intent = new Intent(MainActivity.this, JokeDisplayActivity.class);
+                intent.putExtra(JokeDisplayActivity.EXTRA_JOKE, result);
+                startActivity(intent);
+            }
+        }).execute();
     }
 
 }
