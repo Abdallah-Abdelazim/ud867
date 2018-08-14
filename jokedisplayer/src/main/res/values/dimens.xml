@@ -1,0 +1,3 @@
+<resources>
+    <dimen name="joke_text_view_margin">8dp</dimen>
+</resources>

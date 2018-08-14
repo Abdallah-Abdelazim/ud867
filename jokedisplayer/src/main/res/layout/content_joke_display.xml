@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activities.JokeDisplayActivity"
+    tools:showIn="@layout/activity_joke_display">
+
+    <TextView
+        android:id="@+id/tv_joke"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/joke_text_view_margin"
+        android:layout_marginEnd="@dimen/joke_text_view_margin"
+        android:layout_marginLeft="@dimen/joke_text_view_margin"
+        android:layout_marginRight="@dimen/joke_text_view_margin"
+        android:layout_marginStart="@dimen/joke_text_view_margin"
+        android:layout_marginTop="@dimen/joke_text_view_margin"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Joke will be displayed here" />
+</android.support.constraint.ConstraintLayout>
